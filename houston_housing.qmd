@@ -1,0 +1,85 @@
+---
+title: "Houston Housing Market"
+author: "Jonathan Chan"
+format:
+  revealjs:
+    slide-number: true
+---
+
+## Annual Houston Home Sales
+
+```{r}
+#| echo: false
+if (!require("tidyverse")) install.packages("tidyverse")
+library(tidyverse)
+
+txhousing |>
+  filter(city == "Houston") |>
+  group_by(year) |>
+  summarize(sales = sum(sales)) |>
+  ggplot(aes(x = year, y = sales)) +
+  geom_line() +
+  ggtitle("Annual Houses Sold in Houston, TX")
+```
+
+Houston home sales vary substantially across years. This chart shows how annual transaction volume changed over time. You can esp see the dip around 2010
+
+## Average Houston Price by Month
+
+```{r}
+#| echo: false
+
+if (!require("tidyverse")) install.packages("tidyverse")
+library(tidyverse)
+
+txhousing |>
+  filter(city == "Houston") |>
+  group_by(month) |>
+  summarize(avg_price = sum(volume) / sum(sales)) |>
+  mutate(
+    month = factor(
+      month.abb[month],
+      levels = month.abb,
+      ordered = TRUE
+    )
+  ) |>
+  ggplot(aes(x = month, y = avg_price)) +
+  geom_bar(stat = "identity") +
+  ggtitle("Average Price of Houses Sold in Texas by Month") +
+  xlab("Month") +
+  ylab("Average Sale Price") +
+  scale_y_continuous(labels = scales::dollar)
+```
+
+You can see here that the average price varies across the months. This suggests there's seasonality to this
+
+
+## Texas City Comparison
+```{r}
+#| echo: false
+
+if (!require("tidyverse")) install.packages("tidyverse")
+library(tidyverse)
+
+txhousing |>
+  filter(year == 2015) |>
+  group_by(city) |>
+  summarize(
+    avg_price = sum(volume) / sum(sales),
+    num_sales = sum(sales)
+  ) |>
+  slice_max(num_sales, n = 10) |>
+  ggplot(aes(x = city, y = avg_price)) +
+  geom_bar(stat = "identity") +
+  ggtitle("Average Price of Houses Sold in 2015 by City in Texas") +
+  xlab("City") +
+  ylab("Average Sale Price") +
+  scale_y_continuous(labels = scales::dollar)
+```
+
+Houston can be compared to other cities in Texas to see how avg sale price differs. Note Fort Worth has the lowest price...guess you could say the houses are worth it there!!! hahahahahah
+
+
+## Conclusion
+
+**Houston’s** housing market shows changes over time, seasonal differences in average prices, and meaningful differences compared with other large Texas cities.
