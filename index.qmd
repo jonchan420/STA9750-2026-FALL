@@ -1,12 +1,13 @@
 ---
 title: "Jonathan Chan"
 ---
+![](jonathan_headshot.jpg){width=250px}
 
 Hi! I'm Jonathan Chan, a graduate student in the MS in Artificial Intelligence and Business Analytics program at Baruch College.
 
 I'm interested in data science, machine learning, analytics, and using data to solve real-world problems. My current interests include healthcare analytics, public-sector analytics, and financial services.
 
-This website contains my work for STA 9750: Applied Statistics for Analytics.
+This website contains my work for STA 9750: Software Tools for Data Analysis
 
 ## About Me
 
@@ -16,7 +17,7 @@ Some of my recent projects include analyzing NYC 311 service request data, build
 
 I also did a GenAI hackathon sponsored by Capital One where I made an app that translated difficult documents into simpler language and different languages
 
-Work in progress obv but I want to put my conferences, club exp, work exp, projects, and what i do for fun
+Work in progress obv but I want to put my conferences, club exp, work exp, projects, what i do for fun, where ive traveled
 
 ## STA 9750
 
