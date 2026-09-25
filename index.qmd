@@ -7,8 +7,33 @@ Hi! I'm Jonathan Chan, a graduate student in the MS in Artificial Intelligence a
 
 I'm interested in data science, machine learning, analytics, and using data to solve real-world problems. My current interests include healthcare analytics, public-sector analytics, and financial services.
 
-
 This website contains my work for STA 9750: Software Tools for Data Analysis
+
+## Baruch College
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+if(!require("leaflet")){
+    options(repos=c(CRAN="https://cloud.r-project.org"))
+    install.packages("leaflet")
+    stopifnot(require("leaflet"))
+}
+
+baruch_longitude <- -73.98333
+baruch_latitude  <- +40.74028
+
+leaflet() |>
+  addTiles() |>
+  setView(baruch_longitude, baruch_latitude, zoom=17) |>
+  addPopups(
+    baruch_longitude,
+    baruch_latitude,
+    "I am a Master's student at <b>Baruch College</b>!"
+  )
+```
 
 ## About Me
 
@@ -31,6 +56,8 @@ I like pop punk and emo rock such as FALLOUT boy, the all american rejects, orig
 My favorite games are from the Yakuza series, the Fallout series, excited for GTA 6, playing bs games on roblox w my friends, and modded minecraft
 
 Work in progress obv but I want to put my conferences, club exp, work exp, projects, what i do for fun, where ive traveled
+
+
 
 ## STA 9750
 
