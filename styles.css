@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Main report text */
+body {
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+/* Netflix-inspired headings */
+h1, h2, h3, h4, h5, h6,
+.quarto-title-block .title {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+/* Main report title */
+.quarto-title-block .title {
+  font-size: 3.5rem;
+  color: #E50914;
+}body {
+  background-color: #0d0d0d;
+  color: #f2f2f2;
+}
+
+main.content {
+  background-color: #111111;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.navbar {
+  background-color: #7a0000 !important;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link,
+.navbar-title {
+  color: #ffffff !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #d62828;
+}
+
+a {
+  color: #ff5c5c;
+}
+
+a:hover {
+  color: #ff9a9a;
+}
+
+hr {
+  border-color: #444444;
+}
+
+pre, code {
+  background-color: #1a1a1a !important;
+  color: #f8f8f2 !important;
+}
+
+.table {
+  color: #f2f2f2;
+}
+
+.gt_table {
+  background-color: #111111 !important;
+  color: #f2f2f2 !important;
+}
+
+.gt_heading,
+.gt_col_headings,
+.gt_row,
+.gt_stub,
+.gt_table_body {
+  background-color: #111111 !important;
+  color: #f2f2f2 !important;
+}
+
+.quarto-title-block .title {
+  color: #ff4d4d;
+}
+
+.quarto-title-block .subtitle,
+.quarto-title-meta {
+  color: #dddddd;
+}

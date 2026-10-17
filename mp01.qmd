@@ -375,7 +375,7 @@ The reports include `r scales::comma(unique_titles)` distinct titles. Because Ne
 
 ### Question 3: How many total hours have been spent watching shows from the *Bridgerton* universe?
 
-After going down the Bridgerton rabbit hole, I discoered members spent `r fmt_b(bridgerton_hours)` hours in the Bridgerton universe across `r length(bridgerton_titles)` titles (`r str_flatten_comma(bridgerton_titles, ", and ")`), not counting the fireplace video or the aftershow. That's roughly `r scales::comma(round(bridgerton_hours / (24 * 365.25)))` years of round-the-clock viewing, or several lifetimes of corsets!
+After going down the Bridgerton rabbit hole, I discovered members spent `r fmt_b(bridgerton_hours)` hours in the Bridgerton universe across `r length(bridgerton_titles)` titles (`r str_flatten_comma(bridgerton_titles, ", and ")`), not counting the fireplace video or the aftershow. That's roughly `r scales::comma(round(bridgerton_hours / (24 * 365.25)))` years of round-the-clock viewing, or several lifetimes of corsets!
 
 ::: {.column-margin}
 ![Several lifetimes of corsets. Image: Netflix.](images/bridgerton.jpg){fig-alt="Promotional image for Bridgerton"}
