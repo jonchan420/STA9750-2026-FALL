@@ -239,7 +239,9 @@ NETFLIX_DATA |>
     y = "Number of Records"
   )
 ```
+
 Went to next tuesday's lecture to do this
+
 ### Global Availability
 
 ```{r}
@@ -581,7 +583,7 @@ NETFLIX_DATA |>
   ) |>
 style_table()
 ```
-Series dominate movies by a pretty wide margin. They accounted for 71.0% of watch time in 2023H1, the only period that includes films; thanks to the 2023 Data Schism, later periods are TV-only, so their higher shares aren’t comparable. The three most-watched titles it labels as films in 2026H1 are The Roast of Kevin Hart, Unicorn Academy: Secrets Revealed: Chapter 1, and The Creature Cases: Chapter 7.
+Series dominate movies by a pretty wide margin. They accounted for 70.6% of watch time in 2023H1. Most of the rest (27.9%) lands in "Unclassified" because the 2023H1 file has no Runtime column, so its films can't be identified by length; thanks to the 2023 Data Schism, later periods are TV-only, so their higher shares aren’t comparable. The three most-watched titles it labels as films in 2026H1 are The Roast of Kevin Hart, Unicorn Academy: Secrets Revealed: Chapter 1, and The Creature Cases: Chapter 7.
 
 ### Question 5: How does the performance of live events compare to pre-taped content? Does the average live event draw more viewership than an average piece of pre-taped content? How about a 'top tier' live event vs 'top tier' pre-taped content?
 
