@@ -424,6 +424,21 @@ The ten most-watched titles of 2026H1 captured `r scales::percent(top10_share, a
 
 `r scales::percent(global_title_share, accuracy = 0.1)` of distinct titles were available in every Netflix market, and those titles captured `r scales::percent(global_hours_share, accuracy = 0.1)` of all hours viewed. Globally available titles therefore punch well above their weight, which fits the fact that most of them are Netflix originals that also receive the heaviest promotion.
 
+### Bonus Question: How much time has gone into the *Dragon Ball* universe?
+
+```{r}
+#| label: bonus-dragon-ball
+
+# Find every Dragon Ball title, with or without a space and in any capitalization.
+dragon_ball <- NETFLIX_DATA |>
+  filter(str_detect(title, regex("dragon ?ball", ignore_case = TRUE)))
+
+dragon_ball_hours  <- sum(dragon_ball$hours_viewed)
+dragon_ball_titles <- n_distinct(dragon_ball$title)
+dragon_ball_global <- mean(dragon_ball$available_globally, na.rm = TRUE)
+```
+
+Members spent `r fmt_b(dragon_ball_hours)` hours across `r dragon_ball_titles` *Dragon Ball* titles, and `r scales::percent(dragon_ball_global, accuracy = 1)` of those title-periods were available globally. For comparison, the *Bridgerton* universe drew `r fmt_b(bridgerton_hours)`. Despite the ratio, it's still pretty high.
 
 
 
