@@ -13,7 +13,8 @@ format:
 
 ## Introduction
 
-Welcome to my first (graded) mini project! I intend to demonstrate my skills at Data Summarization/Exploratory Analysis/Table Formatting in an analysis of Media/Internet data. As you can tell, the project is Netflix themed, which I got color inspiration from another's peer mini project 0 
+Welcome to my first (graded) mini project! As you can tell, the project is Netflix themed, which I got inspired (color wise) by a classmate's Mini-Project #00.
+ 
 
 Netflix spent years gatekeeping its viewership data, however advertisers wanted proof people would actually see their ads, and creators wanted a piece of that pie, so since 2023 Netflix publishes a semi annual *What We Watched* report covering nearly majority of the data that Netflix can provide. In this mini project, I dug through seven of those reports to figure out what actually captures Netflix watch time, in which I turn into a strategy memo for Netflix to figure out how to spend their 2027 content budget.
 
@@ -183,10 +184,18 @@ NETFLIX_DATA |>
   ) |>
   gt() |>
   tab_header(
-    title = "Missing Values by Variable"
+    title = "Missing Values by Variable",
+    subtitle = "Release dates are by far the most commonly missing field"
   ) |>
-  fmt_number(decimals = 0) |>
-style_table()
+  cols_label(
+    release_date = "Release Date",
+    views = "Views",
+    runtime = "Runtime",
+    available_globally = "Global Flag",
+    hours_viewed = "Hours Viewed"
+  ) |>
+  fmt_integer() |>
+  style_table()
 ```
 
 ### Viewership Distribution
@@ -203,11 +212,19 @@ NETFLIX_DATA |>
   ) |>
   gt() |>
   tab_header(
-    title = "Distribution of Netflix Viewing Hours"
+    title = "Distribution of Netflix Viewing Hours",
+    subtitle = "A few huge hits pull the mean far above the median"
   ) |>
-  fmt_number(decimals = 0) |>
-style_table()
+  cols_label(
+    minimum = "Minimum",
+    median = "Median",
+    mean = "Mean",
+    maximum = "Maximum"
+  ) |>
+  fmt_number(decimals = 1, suffixing = TRUE) |>
+  style_table()
 ```
+
 ```{r}
 #| label: viewership-histogram-zoom
 
@@ -229,20 +246,32 @@ Went to next tuesday's lecture to do this
 #| label: global-availability
 
 NETFLIX_DATA |>
-  group_by(available_globally) |>
+  mutate(
+    availability = if_else(
+      available_globally,
+      "Global",
+      "Regional",
+      missing = "Unknown"
+    )
+  ) |>
+  group_by(availability) |>
   summarize(
     records = n(),
     total_hours = sum(hours_viewed)
   ) |>
   gt() |>
   tab_header(
-    title = "Global Availability and Viewing Hours"
+    title = "Global Availability and Viewing Hours",
+    subtitle = "Global titles are about a third of records but over half of all hours"
   ) |>
-  fmt_number(
-    columns = c(records, total_hours),
-    decimals = 0
+  cols_label(
+    availability = "Availability",
+    records = "Records",
+    total_hours = "Hours Viewed"
   ) |>
-style_table()
+  fmt_integer(columns = records) |>
+  fmt_number(columns = total_hours, decimals = 1, suffixing = TRUE) |>
+  style_table()
 ```
 
 ### Availability Visualization
@@ -414,7 +443,8 @@ NETFLIX_DATA |>
   ungroup() |>
   gt() |>
   tab_header(
-    title = "Most Watched Netflix Title by Reporting Period"
+    title = "Most Watched Netflix Title by Reporting Period",
+    subtitle = "Even the biggest hit captures under 1.5% of a period's viewing"
   ) |>
   cols_label(
     period = "Period",
@@ -422,9 +452,10 @@ NETFLIX_DATA |>
     hours_viewed = "Hours Viewed",
     viewing_share = "Share of Period"
   ) |>
-  fmt_number(columns = hours_viewed, decimals = 0) |>
+  fmt_number(columns = hours_viewed, decimals = 1, suffixing = TRUE) |>
   fmt_percent(columns = viewing_share, decimals = 2) |>
-style_table()
+  data_color(columns = viewing_share, palette = c("#FFFFFF", "#E50914")) |>
+  style_table()
 ```
 No single title captured more than 1.4% of a period's total watch time, even though *Wednesday* topped 960M hours (wow). Every period has a clear winner, with *Squid Game* claiming two periods, but the share of viewing is all between 0.9 and 1.4 percent. Although pretty small, that goes to show how many hours users watch across the world. The winners also seem to be all global series
 
@@ -442,7 +473,8 @@ NETFLIX_DATA |>
   ungroup() |>
   gt() |>
   tab_header(
-    title = "Netflix Catalog Size Across Reporting Periods"
+        title = "Netflix Catalog Size Across Reporting Periods",
+    subtitle = "The drop after 2023H1 reflects the 2023 Data Schism"
   ) |>
   cols_label(
     period = "Reporting Period",
@@ -612,16 +644,12 @@ comparison_data |>
     biggest_title = "Most Viewed Title",
     biggest_views_m = "Top Views (M)"
   ) |>
+    fmt_integer(columns = records) |>
   fmt_number(
-    columns = c(
-      records,
-      average_views_m,
-      top10_avg_views_m,
-      biggest_views_m
-    ),
+    columns = c(average_views_m, top10_avg_views_m, biggest_views_m),
     decimals = 1
   ) |>
-style_table()
+  style_table()
 ```
 On average, a live event drew `r scales::number(mean(comparison_data$views[comparison_data$live_event]) / 1e6, accuracy = 0.1)`M views versus `r scales::number(mean(comparison_data$views[!comparison_data$live_event]) / 1e6, accuracy = 0.1)`M for pre-recorded titles, so the average live event comes out slightly ahead. At the top tier it isn't close: the ten biggest pre-recorded titles averaged `r scales::number(top10_data$top10_avg_views_m[top10_data$content_type == "Pre-recorded"], accuracy = 0.1)`M views, compared with `r scales::number(top10_data$top10_avg_views_m[top10_data$content_type == "Live Event"], accuracy = 0.1)`M for the ten biggest live events. Live events hit singles; scripted shows hit the home runs.
 
@@ -853,7 +881,7 @@ Even so, I don't expect these gaps to change the overall conclusions, because th
 ---
 
 ::: {.callout-note title="AI Usage Statement" collapse="true"}
-AI disclosure, I used ChatGPT to help format the css for this project to get Netflix themed fonts and colors. I also used Claude for the Gini coefficient math but i drew the conclusion from it myself. After my first run through, I asked Claude to compare my work to the rubric and so I had it make the variables for me after i realized i shouldn't hard code the numbers in my comparative analysis's, so i can copy and paste them into the memo I'd write myself. 
+AI disclosure, I used ChatGPT to help format the css for this project to get Netflix themed fonts and colors. I also used Claude for the Gini coefficient math but i drew the conclusion from it myself. After my first run through, I asked Claude to compare my work to the rubric and so I had it make the variables for me after i realized i shouldn't hard code the numbers in my comparative analysis's, so i can plug the variable into the memo I'd write myself. 
 :::
 
 This work ©2026 by jonchan420 was initially prepared as a Mini-Project for

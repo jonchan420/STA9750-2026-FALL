@@ -166,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Welcome to my first (graded) mini project! I intend to demonstrate my skills at Data Summarization/Exploratory Analysis/Table Formatting in an analysis of Media/Internet data. As you can tell, the project is Netflix themed, which I got color inspiration from another’s peer mini project 0</p>
+<p>Welcome to my first (graded) mini project! As you can tell, the project is Netflix themed, which I got inspired (color wise) by a classmate’s Mini-Project #00.</p>
 <p>Netflix spent years gatekeeping its viewership data, however advertisers wanted proof people would actually see their ads, and creators wanted a piece of that pie, so since 2023 Netflix publishes a semi annual <em>What We Watched</em> report covering nearly majority of the data that Netflix can provide. In this mini project, I dug through seven of those reports to figure out what actually captures Netflix watch time, in which I turn into a strategy memo for Netflix to figure out how to spend their 2027 content budget.</p>
 </section>
 <section id="data-acquisition-and-preparation" class="level2">
@@ -648,29 +648,37 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
 <span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Missing Values by Variable"</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Missing Values by Variable"</span>,</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Release dates are by far the most commonly missing field"</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">release_date =</span> <span class="st">"Release Date"</span>,</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">views =</span> <span class="st">"Views"</span>,</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">runtime =</span> <span class="st">"Runtime"</span>,</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">available_globally =</span> <span class="st">"Global Flag"</span>,</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">hours_viewed =</span> <span class="st">"Hours Viewed"</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_integer</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="gjfqbnxddp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gjfqbnxddp table {
+<div id="pzamyjukdb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pzamyjukdb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gjfqbnxddp thead, #gjfqbnxddp tbody, #gjfqbnxddp tfoot, #gjfqbnxddp tr, #gjfqbnxddp td, #gjfqbnxddp th {
+#pzamyjukdb thead, #pzamyjukdb tbody, #pzamyjukdb tfoot, #pzamyjukdb tr, #pzamyjukdb td, #pzamyjukdb th {
   border-style: none;
 }
 
-#gjfqbnxddp p {
+#pzamyjukdb p {
   margin: 0;
   padding: 0;
 }
 
-#gjfqbnxddp .gt_table {
+#pzamyjukdb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -696,12 +704,12 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-left-color: #D3D3D3;
 }
 
-#gjfqbnxddp .gt_caption {
+#pzamyjukdb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gjfqbnxddp .gt_title {
+#pzamyjukdb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -713,7 +721,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-bottom-width: 0;
 }
 
-#gjfqbnxddp .gt_subtitle {
+#pzamyjukdb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -725,7 +733,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-top-width: 0;
 }
 
-#gjfqbnxddp .gt_heading {
+#pzamyjukdb .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -737,13 +745,13 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-right-color: #D3D3D3;
 }
 
-#gjfqbnxddp .gt_bottom_border {
+#pzamyjukdb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gjfqbnxddp .gt_col_headings {
+#pzamyjukdb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -758,7 +766,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-right-color: #D3D3D3;
 }
 
-#gjfqbnxddp .gt_col_heading {
+#pzamyjukdb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -778,7 +786,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   overflow-x: hidden;
 }
 
-#gjfqbnxddp .gt_column_spanner_outer {
+#pzamyjukdb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -790,15 +798,15 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 4px;
 }
 
-#gjfqbnxddp .gt_column_spanner_outer:first-child {
+#pzamyjukdb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gjfqbnxddp .gt_column_spanner_outer:last-child {
+#pzamyjukdb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gjfqbnxddp .gt_column_spanner {
+#pzamyjukdb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -810,11 +818,11 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   width: 100%;
 }
 
-#gjfqbnxddp .gt_spanner_row {
+#pzamyjukdb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gjfqbnxddp .gt_group_heading {
+#pzamyjukdb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -840,7 +848,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   text-align: left;
 }
 
-#gjfqbnxddp .gt_empty_group_heading {
+#pzamyjukdb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -855,15 +863,15 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   vertical-align: middle;
 }
 
-#gjfqbnxddp .gt_from_md > :first-child {
+#pzamyjukdb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gjfqbnxddp .gt_from_md > :last-child {
+#pzamyjukdb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gjfqbnxddp .gt_row {
+#pzamyjukdb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -882,7 +890,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   overflow-x: hidden;
 }
 
-#gjfqbnxddp .gt_stub {
+#pzamyjukdb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -895,7 +903,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#gjfqbnxddp .gt_stub_row_group {
+#pzamyjukdb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -909,15 +917,15 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   vertical-align: top;
 }
 
-#gjfqbnxddp .gt_row_group_first td {
+#pzamyjukdb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gjfqbnxddp .gt_row_group_first th {
+#pzamyjukdb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gjfqbnxddp .gt_summary_row {
+#pzamyjukdb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -927,16 +935,16 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#gjfqbnxddp .gt_first_summary_row {
+#pzamyjukdb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gjfqbnxddp .gt_first_summary_row.thick {
+#pzamyjukdb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gjfqbnxddp .gt_last_summary_row {
+#pzamyjukdb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -946,7 +954,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-bottom-color: #D3D3D3;
 }
 
-#gjfqbnxddp .gt_grand_summary_row {
+#pzamyjukdb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -956,7 +964,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#gjfqbnxddp .gt_first_grand_summary_row {
+#pzamyjukdb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -966,7 +974,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-top-color: #D3D3D3;
 }
 
-#gjfqbnxddp .gt_last_grand_summary_row_top {
+#pzamyjukdb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -976,11 +984,11 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-bottom-color: #D3D3D3;
 }
 
-#gjfqbnxddp .gt_striped {
+#pzamyjukdb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gjfqbnxddp .gt_table_body {
+#pzamyjukdb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -989,7 +997,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-bottom-color: #D3D3D3;
 }
 
-#gjfqbnxddp .gt_footnotes {
+#pzamyjukdb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1003,7 +1011,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-right-color: #D3D3D3;
 }
 
-#gjfqbnxddp .gt_footnote {
+#pzamyjukdb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1012,7 +1020,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#gjfqbnxddp .gt_sourcenotes {
+#pzamyjukdb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1026,7 +1034,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-right-color: #D3D3D3;
 }
 
-#gjfqbnxddp .gt_sourcenote {
+#pzamyjukdb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1034,72 +1042,72 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#gjfqbnxddp .gt_left {
+#pzamyjukdb .gt_left {
   text-align: left;
 }
 
-#gjfqbnxddp .gt_center {
+#pzamyjukdb .gt_center {
   text-align: center;
 }
 
-#gjfqbnxddp .gt_right {
+#pzamyjukdb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gjfqbnxddp .gt_font_normal {
+#pzamyjukdb .gt_font_normal {
   font-weight: normal;
 }
 
-#gjfqbnxddp .gt_font_bold {
+#pzamyjukdb .gt_font_bold {
   font-weight: bold;
 }
 
-#gjfqbnxddp .gt_font_italic {
+#pzamyjukdb .gt_font_italic {
   font-style: italic;
 }
 
-#gjfqbnxddp .gt_super {
+#pzamyjukdb .gt_super {
   font-size: 65%;
 }
 
-#gjfqbnxddp .gt_footnote_marks {
+#pzamyjukdb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gjfqbnxddp .gt_asterisk {
+#pzamyjukdb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gjfqbnxddp .gt_indent_1 {
+#pzamyjukdb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gjfqbnxddp .gt_indent_2 {
+#pzamyjukdb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gjfqbnxddp .gt_indent_3 {
+#pzamyjukdb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gjfqbnxddp .gt_indent_4 {
+#pzamyjukdb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gjfqbnxddp .gt_indent_5 {
+#pzamyjukdb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gjfqbnxddp .katex-display {
+#pzamyjukdb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gjfqbnxddp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pzamyjukdb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1107,14 +1115,17 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Missing Values by Variable</td>
+<td colspan="5" class="gt_heading gt_title gt_font_normal">Missing Values by Variable</td>
 </tr>
-<tr class="gt_col_headings even">
-<th id="release_date" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">release_date</th>
-<th id="views" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">views</th>
-<th id="runtime" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">runtime</th>
-<th id="available_globally" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">available_globally</th>
-<th id="hours_viewed" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">hours_viewed</th>
+<tr class="gt_heading even">
+<td colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Release dates are by far the most commonly missing field</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="release_date" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Release Date</th>
+<th id="views" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Views</th>
+<th id="runtime" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Runtime</th>
+<th id="available_globally" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Global Flag</th>
+<th id="hours_viewed" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Hours Viewed</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -1151,29 +1162,36 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Netflix Viewing Hours"</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Netflix Viewing Hours"</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"A few huge hits pull the mean far above the median"</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">minimum =</span> <span class="st">"Minimum"</span>,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">median =</span> <span class="st">"Median"</span>,</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="st">"Mean"</span>,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">maximum =</span> <span class="st">"Maximum"</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">1</span>, <span class="at">suffixing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="mnnvcxfmvl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mnnvcxfmvl table {
+<div id="dqaoavuwzq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dqaoavuwzq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mnnvcxfmvl thead, #mnnvcxfmvl tbody, #mnnvcxfmvl tfoot, #mnnvcxfmvl tr, #mnnvcxfmvl td, #mnnvcxfmvl th {
+#dqaoavuwzq thead, #dqaoavuwzq tbody, #dqaoavuwzq tfoot, #dqaoavuwzq tr, #dqaoavuwzq td, #dqaoavuwzq th {
   border-style: none;
 }
 
-#mnnvcxfmvl p {
+#dqaoavuwzq p {
   margin: 0;
   padding: 0;
 }
 
-#mnnvcxfmvl .gt_table {
+#dqaoavuwzq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1199,12 +1217,12 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-left-color: #D3D3D3;
 }
 
-#mnnvcxfmvl .gt_caption {
+#dqaoavuwzq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mnnvcxfmvl .gt_title {
+#dqaoavuwzq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1216,7 +1234,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-bottom-width: 0;
 }
 
-#mnnvcxfmvl .gt_subtitle {
+#dqaoavuwzq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1228,7 +1246,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-top-width: 0;
 }
 
-#mnnvcxfmvl .gt_heading {
+#dqaoavuwzq .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1240,13 +1258,13 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-right-color: #D3D3D3;
 }
 
-#mnnvcxfmvl .gt_bottom_border {
+#dqaoavuwzq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mnnvcxfmvl .gt_col_headings {
+#dqaoavuwzq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1261,7 +1279,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-right-color: #D3D3D3;
 }
 
-#mnnvcxfmvl .gt_col_heading {
+#dqaoavuwzq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1281,7 +1299,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   overflow-x: hidden;
 }
 
-#mnnvcxfmvl .gt_column_spanner_outer {
+#dqaoavuwzq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1293,15 +1311,15 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 4px;
 }
 
-#mnnvcxfmvl .gt_column_spanner_outer:first-child {
+#dqaoavuwzq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mnnvcxfmvl .gt_column_spanner_outer:last-child {
+#dqaoavuwzq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mnnvcxfmvl .gt_column_spanner {
+#dqaoavuwzq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1313,11 +1331,11 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   width: 100%;
 }
 
-#mnnvcxfmvl .gt_spanner_row {
+#dqaoavuwzq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mnnvcxfmvl .gt_group_heading {
+#dqaoavuwzq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1343,7 +1361,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   text-align: left;
 }
 
-#mnnvcxfmvl .gt_empty_group_heading {
+#dqaoavuwzq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1358,15 +1376,15 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   vertical-align: middle;
 }
 
-#mnnvcxfmvl .gt_from_md > :first-child {
+#dqaoavuwzq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mnnvcxfmvl .gt_from_md > :last-child {
+#dqaoavuwzq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mnnvcxfmvl .gt_row {
+#dqaoavuwzq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1385,7 +1403,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   overflow-x: hidden;
 }
 
-#mnnvcxfmvl .gt_stub {
+#dqaoavuwzq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1398,7 +1416,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#mnnvcxfmvl .gt_stub_row_group {
+#dqaoavuwzq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1412,15 +1430,15 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   vertical-align: top;
 }
 
-#mnnvcxfmvl .gt_row_group_first td {
+#dqaoavuwzq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mnnvcxfmvl .gt_row_group_first th {
+#dqaoavuwzq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mnnvcxfmvl .gt_summary_row {
+#dqaoavuwzq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1430,16 +1448,16 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#mnnvcxfmvl .gt_first_summary_row {
+#dqaoavuwzq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mnnvcxfmvl .gt_first_summary_row.thick {
+#dqaoavuwzq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mnnvcxfmvl .gt_last_summary_row {
+#dqaoavuwzq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1449,7 +1467,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-bottom-color: #D3D3D3;
 }
 
-#mnnvcxfmvl .gt_grand_summary_row {
+#dqaoavuwzq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1459,7 +1477,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#mnnvcxfmvl .gt_first_grand_summary_row {
+#dqaoavuwzq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1469,7 +1487,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-top-color: #D3D3D3;
 }
 
-#mnnvcxfmvl .gt_last_grand_summary_row_top {
+#dqaoavuwzq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1479,11 +1497,11 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-bottom-color: #D3D3D3;
 }
 
-#mnnvcxfmvl .gt_striped {
+#dqaoavuwzq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mnnvcxfmvl .gt_table_body {
+#dqaoavuwzq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1492,7 +1510,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-bottom-color: #D3D3D3;
 }
 
-#mnnvcxfmvl .gt_footnotes {
+#dqaoavuwzq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1506,7 +1524,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-right-color: #D3D3D3;
 }
 
-#mnnvcxfmvl .gt_footnote {
+#dqaoavuwzq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1515,7 +1533,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#mnnvcxfmvl .gt_sourcenotes {
+#dqaoavuwzq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1529,7 +1547,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-right-color: #D3D3D3;
 }
 
-#mnnvcxfmvl .gt_sourcenote {
+#dqaoavuwzq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1537,72 +1555,72 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#mnnvcxfmvl .gt_left {
+#dqaoavuwzq .gt_left {
   text-align: left;
 }
 
-#mnnvcxfmvl .gt_center {
+#dqaoavuwzq .gt_center {
   text-align: center;
 }
 
-#mnnvcxfmvl .gt_right {
+#dqaoavuwzq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mnnvcxfmvl .gt_font_normal {
+#dqaoavuwzq .gt_font_normal {
   font-weight: normal;
 }
 
-#mnnvcxfmvl .gt_font_bold {
+#dqaoavuwzq .gt_font_bold {
   font-weight: bold;
 }
 
-#mnnvcxfmvl .gt_font_italic {
+#dqaoavuwzq .gt_font_italic {
   font-style: italic;
 }
 
-#mnnvcxfmvl .gt_super {
+#dqaoavuwzq .gt_super {
   font-size: 65%;
 }
 
-#mnnvcxfmvl .gt_footnote_marks {
+#dqaoavuwzq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mnnvcxfmvl .gt_asterisk {
+#dqaoavuwzq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mnnvcxfmvl .gt_indent_1 {
+#dqaoavuwzq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mnnvcxfmvl .gt_indent_2 {
+#dqaoavuwzq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mnnvcxfmvl .gt_indent_3 {
+#dqaoavuwzq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mnnvcxfmvl .gt_indent_4 {
+#dqaoavuwzq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mnnvcxfmvl .gt_indent_5 {
+#dqaoavuwzq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mnnvcxfmvl .katex-display {
+#dqaoavuwzq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mnnvcxfmvl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dqaoavuwzq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1610,21 +1628,24 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Distribution of Netflix Viewing Hours</td>
+<td colspan="4" class="gt_heading gt_title gt_font_normal">Distribution of Netflix Viewing Hours</td>
 </tr>
-<tr class="gt_col_headings even">
-<th id="minimum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">minimum</th>
-<th id="median" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">median</th>
-<th id="mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">mean</th>
-<th id="maximum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">maximum</th>
+<tr class="gt_heading even">
+<td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">A few huge hits pull the mean far above the median</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="minimum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Minimum</th>
+<th id="median" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Median</th>
+<th id="mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Mean</th>
+<th id="maximum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Maximum</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_right" headers="minimum">100,000</td>
-<td class="gt_row gt_right" headers="median">1,800,000</td>
-<td class="gt_row gt_right" headers="mean">8,265,858</td>
-<td class="gt_row gt_right" headers="maximum">964,100,000</td>
+<td class="gt_row gt_right" headers="minimum">100.0K</td>
+<td class="gt_row gt_right" headers="median">1.8M</td>
+<td class="gt_row gt_right" headers="mean">8.3M</td>
+<td class="gt_row gt_right" headers="maximum">964.1M</td>
 </tr>
 </tbody><tfoot>
 <tr class="gt_sourcenotes odd">
@@ -1664,39 +1685,51 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>NETFLIX_DATA <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(available_globally) <span class="sc">|&gt;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">records =</span> <span class="fu">n</span>(),</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_hours =</span> <span class="fu">sum</span>(hours_viewed)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Global Availability and Viewing Hours"</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(records, total_hours),</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">availability =</span> <span class="fu">if_else</span>(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>      available_globally,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Global"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Regional"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing =</span> <span class="st">"Unknown"</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(availability) <span class="sc">|&gt;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">records =</span> <span class="fu">n</span>(),</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_hours =</span> <span class="fu">sum</span>(hours_viewed)</span>
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Global Availability and Viewing Hours"</span>,</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Global titles are about a third of records but over half of all hours"</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">availability =</span> <span class="st">"Availability"</span>,</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">records =</span> <span class="st">"Records"</span>,</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_hours =</span> <span class="st">"Hours Viewed"</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_integer</span>(<span class="at">columns =</span> records) <span class="sc">|&gt;</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> total_hours, <span class="at">decimals =</span> <span class="dv">1</span>, <span class="at">suffixing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="hfyiankwua" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hfyiankwua table {
+<div id="mamfzgfkmu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mamfzgfkmu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hfyiankwua thead, #hfyiankwua tbody, #hfyiankwua tfoot, #hfyiankwua tr, #hfyiankwua td, #hfyiankwua th {
+#mamfzgfkmu thead, #mamfzgfkmu tbody, #mamfzgfkmu tfoot, #mamfzgfkmu tr, #mamfzgfkmu td, #mamfzgfkmu th {
   border-style: none;
 }
 
-#hfyiankwua p {
+#mamfzgfkmu p {
   margin: 0;
   padding: 0;
 }
 
-#hfyiankwua .gt_table {
+#mamfzgfkmu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1722,12 +1755,12 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-left-color: #D3D3D3;
 }
 
-#hfyiankwua .gt_caption {
+#mamfzgfkmu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hfyiankwua .gt_title {
+#mamfzgfkmu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1739,7 +1772,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-bottom-width: 0;
 }
 
-#hfyiankwua .gt_subtitle {
+#mamfzgfkmu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1751,7 +1784,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-top-width: 0;
 }
 
-#hfyiankwua .gt_heading {
+#mamfzgfkmu .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1763,13 +1796,13 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-right-color: #D3D3D3;
 }
 
-#hfyiankwua .gt_bottom_border {
+#mamfzgfkmu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hfyiankwua .gt_col_headings {
+#mamfzgfkmu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1784,7 +1817,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-right-color: #D3D3D3;
 }
 
-#hfyiankwua .gt_col_heading {
+#mamfzgfkmu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1804,7 +1837,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   overflow-x: hidden;
 }
 
-#hfyiankwua .gt_column_spanner_outer {
+#mamfzgfkmu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1816,15 +1849,15 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 4px;
 }
 
-#hfyiankwua .gt_column_spanner_outer:first-child {
+#mamfzgfkmu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hfyiankwua .gt_column_spanner_outer:last-child {
+#mamfzgfkmu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hfyiankwua .gt_column_spanner {
+#mamfzgfkmu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1836,11 +1869,11 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   width: 100%;
 }
 
-#hfyiankwua .gt_spanner_row {
+#mamfzgfkmu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hfyiankwua .gt_group_heading {
+#mamfzgfkmu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1866,7 +1899,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   text-align: left;
 }
 
-#hfyiankwua .gt_empty_group_heading {
+#mamfzgfkmu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1881,15 +1914,15 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   vertical-align: middle;
 }
 
-#hfyiankwua .gt_from_md > :first-child {
+#mamfzgfkmu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hfyiankwua .gt_from_md > :last-child {
+#mamfzgfkmu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hfyiankwua .gt_row {
+#mamfzgfkmu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1908,7 +1941,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   overflow-x: hidden;
 }
 
-#hfyiankwua .gt_stub {
+#mamfzgfkmu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1921,7 +1954,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#hfyiankwua .gt_stub_row_group {
+#mamfzgfkmu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1935,15 +1968,15 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   vertical-align: top;
 }
 
-#hfyiankwua .gt_row_group_first td {
+#mamfzgfkmu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hfyiankwua .gt_row_group_first th {
+#mamfzgfkmu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hfyiankwua .gt_summary_row {
+#mamfzgfkmu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1953,16 +1986,16 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#hfyiankwua .gt_first_summary_row {
+#mamfzgfkmu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hfyiankwua .gt_first_summary_row.thick {
+#mamfzgfkmu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hfyiankwua .gt_last_summary_row {
+#mamfzgfkmu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1972,7 +2005,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-bottom-color: #D3D3D3;
 }
 
-#hfyiankwua .gt_grand_summary_row {
+#mamfzgfkmu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1982,7 +2015,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#hfyiankwua .gt_first_grand_summary_row {
+#mamfzgfkmu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1992,7 +2025,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-top-color: #D3D3D3;
 }
 
-#hfyiankwua .gt_last_grand_summary_row_top {
+#mamfzgfkmu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2002,11 +2035,11 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-bottom-color: #D3D3D3;
 }
 
-#hfyiankwua .gt_striped {
+#mamfzgfkmu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hfyiankwua .gt_table_body {
+#mamfzgfkmu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2015,7 +2048,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-bottom-color: #D3D3D3;
 }
 
-#hfyiankwua .gt_footnotes {
+#mamfzgfkmu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2029,7 +2062,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-right-color: #D3D3D3;
 }
 
-#hfyiankwua .gt_footnote {
+#mamfzgfkmu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2038,7 +2071,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#hfyiankwua .gt_sourcenotes {
+#mamfzgfkmu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2052,7 +2085,7 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   border-right-color: #D3D3D3;
 }
 
-#hfyiankwua .gt_sourcenote {
+#mamfzgfkmu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2060,72 +2093,72 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
   padding-right: 5px;
 }
 
-#hfyiankwua .gt_left {
+#mamfzgfkmu .gt_left {
   text-align: left;
 }
 
-#hfyiankwua .gt_center {
+#mamfzgfkmu .gt_center {
   text-align: center;
 }
 
-#hfyiankwua .gt_right {
+#mamfzgfkmu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hfyiankwua .gt_font_normal {
+#mamfzgfkmu .gt_font_normal {
   font-weight: normal;
 }
 
-#hfyiankwua .gt_font_bold {
+#mamfzgfkmu .gt_font_bold {
   font-weight: bold;
 }
 
-#hfyiankwua .gt_font_italic {
+#mamfzgfkmu .gt_font_italic {
   font-style: italic;
 }
 
-#hfyiankwua .gt_super {
+#mamfzgfkmu .gt_super {
   font-size: 65%;
 }
 
-#hfyiankwua .gt_footnote_marks {
+#mamfzgfkmu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hfyiankwua .gt_asterisk {
+#mamfzgfkmu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hfyiankwua .gt_indent_1 {
+#mamfzgfkmu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hfyiankwua .gt_indent_2 {
+#mamfzgfkmu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hfyiankwua .gt_indent_3 {
+#mamfzgfkmu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hfyiankwua .gt_indent_4 {
+#mamfzgfkmu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hfyiankwua .gt_indent_5 {
+#mamfzgfkmu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hfyiankwua .katex-display {
+#mamfzgfkmu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hfyiankwua div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mamfzgfkmu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2133,29 +2166,32 @@ $ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Global Availability and Viewing Hours</td>
+<td colspan="3" class="gt_heading gt_title gt_font_normal">Global Availability and Viewing Hours</td>
 </tr>
-<tr class="gt_col_headings even">
-<th id="available_globally" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">available_globally</th>
-<th id="records" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">records</th>
-<th id="total_hours" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">total_hours</th>
+<tr class="gt_heading even">
+<td colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Global titles are about a third of records but over half of all hours</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="availability" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Availability</th>
+<th id="records" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Records</th>
+<th id="total_hours" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Hours Viewed</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_center" headers="available_globally">FALSE</td>
-<td class="gt_row gt_right" headers="records">40,171</td>
-<td class="gt_row gt_right" headers="total_hours">244,537,400,000</td>
+<td class="gt_row gt_left" headers="availability">Global</td>
+<td class="gt_row gt_right" headers="records">21,719</td>
+<td class="gt_row gt_right" headers="total_hours">265.6B</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_center" headers="available_globally">TRUE</td>
-<td class="gt_row gt_right" headers="records">21,719</td>
-<td class="gt_row gt_right" headers="total_hours">265,637,100,000</td>
+<td class="gt_row gt_left" headers="availability">Regional</td>
+<td class="gt_row gt_right" headers="records">40,171</td>
+<td class="gt_row gt_right" headers="total_hours">244.5B</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_center" headers="available_globally">—</td>
+<td class="gt_row gt_left" headers="availability">Unknown</td>
 <td class="gt_row gt_right" headers="records">2</td>
-<td class="gt_row gt_right" headers="total_hours">1,416,000,000</td>
+<td class="gt_row gt_right" headers="total_hours">1.4B</td>
 </tr>
 </tbody><tfoot>
 <tr class="gt_sourcenotes odd">
@@ -2328,7 +2364,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 </section>
 <section id="question-3-how-many-total-hours-have-been-spent-watching-shows-from-the-bridgerton-universe" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="question-3-how-many-total-hours-have-been-spent-watching-shows-from-the-bridgerton-universe">Question 3: How many total hours have been spent watching shows from the <em>Bridgerton</em> universe?</h3>
-<p>After going down the Bridgerton rabbit hole, I discoered members spent 4.9B hours in the Bridgerton universe across 5 titles (Bridgerton: Season 1, Bridgerton: Season 2, Bridgerton: Season 3, Bridgerton: Season 4, and Queen Charlotte: A Bridgerton Story), not counting the fireplace video or the aftershow. That’s roughly 554,460 years of round-the-clock viewing, or several lifetimes of corsets!</p>
+<p>After going down the Bridgerton rabbit hole, I discovered members spent 4.9B hours in the Bridgerton universe across 5 titles (Bridgerton: Season 1, Bridgerton: Season 2, Bridgerton: Season 3, Bridgerton: Season 4, and Queen Charlotte: A Bridgerton Story), not counting the fireplace video or the aftershow. That’s roughly 554,460 years of round-the-clock viewing, or several lifetimes of corsets!</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
@@ -2369,36 +2405,38 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Most Watched Netflix Title by Reporting Period"</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">period =</span> <span class="st">"Period"</span>,</span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Most Watched Title"</span>,</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">hours_viewed =</span> <span class="st">"Hours Viewed"</span>,</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">viewing_share =</span> <span class="st">"Share of Period"</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> hours_viewed, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> viewing_share, <span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Most Watched Netflix Title by Reporting Period"</span>,</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Even the biggest hit captures under 1.5% of a period's viewing"</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">period =</span> <span class="st">"Period"</span>,</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Most Watched Title"</span>,</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">hours_viewed =</span> <span class="st">"Hours Viewed"</span>,</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">viewing_share =</span> <span class="st">"Share of Period"</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> hours_viewed, <span class="at">decimals =</span> <span class="dv">1</span>, <span class="at">suffixing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> viewing_share, <span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data_color</span>(<span class="at">columns =</span> viewing_share, <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">"#FFFFFF"</span>, <span class="st">"#E50914"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="wdencyuadn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wdencyuadn table {
+<div id="ioihxfonlo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ioihxfonlo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wdencyuadn thead, #wdencyuadn tbody, #wdencyuadn tfoot, #wdencyuadn tr, #wdencyuadn td, #wdencyuadn th {
+#ioihxfonlo thead, #ioihxfonlo tbody, #ioihxfonlo tfoot, #ioihxfonlo tr, #ioihxfonlo td, #ioihxfonlo th {
   border-style: none;
 }
 
-#wdencyuadn p {
+#ioihxfonlo p {
   margin: 0;
   padding: 0;
 }
 
-#wdencyuadn .gt_table {
+#ioihxfonlo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2424,12 +2462,12 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-left-color: #D3D3D3;
 }
 
-#wdencyuadn .gt_caption {
+#ioihxfonlo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wdencyuadn .gt_title {
+#ioihxfonlo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2441,7 +2479,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-width: 0;
 }
 
-#wdencyuadn .gt_subtitle {
+#ioihxfonlo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2453,7 +2491,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-top-width: 0;
 }
 
-#wdencyuadn .gt_heading {
+#ioihxfonlo .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2465,13 +2503,13 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#wdencyuadn .gt_bottom_border {
+#ioihxfonlo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wdencyuadn .gt_col_headings {
+#ioihxfonlo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2486,7 +2524,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#wdencyuadn .gt_col_heading {
+#ioihxfonlo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2506,7 +2544,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   overflow-x: hidden;
 }
 
-#wdencyuadn .gt_column_spanner_outer {
+#ioihxfonlo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2518,15 +2556,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 4px;
 }
 
-#wdencyuadn .gt_column_spanner_outer:first-child {
+#ioihxfonlo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wdencyuadn .gt_column_spanner_outer:last-child {
+#ioihxfonlo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wdencyuadn .gt_column_spanner {
+#ioihxfonlo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2538,11 +2576,11 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   width: 100%;
 }
 
-#wdencyuadn .gt_spanner_row {
+#ioihxfonlo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wdencyuadn .gt_group_heading {
+#ioihxfonlo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2568,7 +2606,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   text-align: left;
 }
 
-#wdencyuadn .gt_empty_group_heading {
+#ioihxfonlo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2583,15 +2621,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   vertical-align: middle;
 }
 
-#wdencyuadn .gt_from_md > :first-child {
+#ioihxfonlo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wdencyuadn .gt_from_md > :last-child {
+#ioihxfonlo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wdencyuadn .gt_row {
+#ioihxfonlo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2610,7 +2648,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   overflow-x: hidden;
 }
 
-#wdencyuadn .gt_stub {
+#ioihxfonlo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2623,7 +2661,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#wdencyuadn .gt_stub_row_group {
+#ioihxfonlo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2637,15 +2675,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   vertical-align: top;
 }
 
-#wdencyuadn .gt_row_group_first td {
+#ioihxfonlo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wdencyuadn .gt_row_group_first th {
+#ioihxfonlo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wdencyuadn .gt_summary_row {
+#ioihxfonlo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2655,16 +2693,16 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#wdencyuadn .gt_first_summary_row {
+#ioihxfonlo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wdencyuadn .gt_first_summary_row.thick {
+#ioihxfonlo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wdencyuadn .gt_last_summary_row {
+#ioihxfonlo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2674,7 +2712,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#wdencyuadn .gt_grand_summary_row {
+#ioihxfonlo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2684,7 +2722,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#wdencyuadn .gt_first_grand_summary_row {
+#ioihxfonlo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2694,7 +2732,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-top-color: #D3D3D3;
 }
 
-#wdencyuadn .gt_last_grand_summary_row_top {
+#ioihxfonlo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2704,11 +2742,11 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#wdencyuadn .gt_striped {
+#ioihxfonlo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wdencyuadn .gt_table_body {
+#ioihxfonlo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2717,7 +2755,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#wdencyuadn .gt_footnotes {
+#ioihxfonlo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2731,7 +2769,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#wdencyuadn .gt_footnote {
+#ioihxfonlo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2740,7 +2778,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#wdencyuadn .gt_sourcenotes {
+#ioihxfonlo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2754,7 +2792,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#wdencyuadn .gt_sourcenote {
+#ioihxfonlo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2762,72 +2800,72 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#wdencyuadn .gt_left {
+#ioihxfonlo .gt_left {
   text-align: left;
 }
 
-#wdencyuadn .gt_center {
+#ioihxfonlo .gt_center {
   text-align: center;
 }
 
-#wdencyuadn .gt_right {
+#ioihxfonlo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wdencyuadn .gt_font_normal {
+#ioihxfonlo .gt_font_normal {
   font-weight: normal;
 }
 
-#wdencyuadn .gt_font_bold {
+#ioihxfonlo .gt_font_bold {
   font-weight: bold;
 }
 
-#wdencyuadn .gt_font_italic {
+#ioihxfonlo .gt_font_italic {
   font-style: italic;
 }
 
-#wdencyuadn .gt_super {
+#ioihxfonlo .gt_super {
   font-size: 65%;
 }
 
-#wdencyuadn .gt_footnote_marks {
+#ioihxfonlo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wdencyuadn .gt_asterisk {
+#ioihxfonlo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wdencyuadn .gt_indent_1 {
+#ioihxfonlo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wdencyuadn .gt_indent_2 {
+#ioihxfonlo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wdencyuadn .gt_indent_3 {
+#ioihxfonlo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wdencyuadn .gt_indent_4 {
+#ioihxfonlo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wdencyuadn .gt_indent_5 {
+#ioihxfonlo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wdencyuadn .katex-display {
+#ioihxfonlo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wdencyuadn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ioihxfonlo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2835,9 +2873,12 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Most Watched Netflix Title by Reporting Period</td>
+<td colspan="4" class="gt_heading gt_title gt_font_normal">Most Watched Netflix Title by Reporting Period</td>
 </tr>
-<tr class="gt_col_headings even">
+<tr class="gt_heading even">
+<td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Even the biggest hit captures under 1.5% of a period's viewing</td>
+</tr>
+<tr class="gt_col_headings header">
 <th id="period" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Period</th>
 <th id="title" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Most Watched Title</th>
 <th id="hours_viewed" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Hours Viewed</th>
@@ -2848,44 +2889,44 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 <tr class="odd">
 <td class="gt_row gt_left" headers="period">2023H1</td>
 <td class="gt_row gt_left" headers="title">The Night Agent: Season 1</td>
-<td class="gt_row gt_right" headers="hours_viewed">812,100,000</td>
-<td class="gt_row gt_right" headers="viewing_share">0.87%</td>
+<td class="gt_row gt_right" headers="hours_viewed">812.1M</td>
+<td class="gt_row gt_right" headers="viewing_share" style="background-color: #FFFFFF; color: #000000">0.87%</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="period">2023H2</td>
 <td class="gt_row gt_left" headers="title">King the Land: Limited Series</td>
-<td class="gt_row gt_right" headers="hours_viewed">630,200,000</td>
-<td class="gt_row gt_right" headers="viewing_share">0.97%</td>
+<td class="gt_row gt_right" headers="hours_viewed">630.2M</td>
+<td class="gt_row gt_right" headers="viewing_share" style="background-color: #FFD5CA; color: #000000">0.97%</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="period">2024H1</td>
 <td class="gt_row gt_left" headers="title">Bridgerton: Season 3</td>
-<td class="gt_row gt_right" headers="hours_viewed">733,800,000</td>
-<td class="gt_row gt_right" headers="viewing_share">1.08%</td>
+<td class="gt_row gt_right" headers="hours_viewed">733.8M</td>
+<td class="gt_row gt_right" headers="viewing_share" style="background-color: #FFA996; color: #000000">1.08%</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="period">2024H2</td>
 <td class="gt_row gt_left" headers="title">Squid Game: Season 2</td>
-<td class="gt_row gt_right" headers="hours_viewed">619,900,000</td>
-<td class="gt_row gt_right" headers="viewing_share">0.91%</td>
+<td class="gt_row gt_right" headers="hours_viewed">619.9M</td>
+<td class="gt_row gt_right" headers="viewing_share" style="background-color: #FFEEEA; color: #000000">0.91%</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="period">2025H1</td>
 <td class="gt_row gt_left" headers="title">Squid Game: Season 2</td>
-<td class="gt_row gt_right" headers="hours_viewed">840,300,000</td>
-<td class="gt_row gt_right" headers="viewing_share">1.18%</td>
+<td class="gt_row gt_right" headers="hours_viewed">840.3M</td>
+<td class="gt_row gt_right" headers="viewing_share" style="background-color: #FC7B63; color: #FFFFFF">1.18%</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="period">2025H2</td>
 <td class="gt_row gt_left" headers="title">Wednesday: Season 2</td>
-<td class="gt_row gt_right" headers="hours_viewed">964,100,000</td>
-<td class="gt_row gt_right" headers="viewing_share">1.35%</td>
+<td class="gt_row gt_right" headers="hours_viewed">964.1M</td>
+<td class="gt_row gt_right" headers="viewing_share" style="background-color: #E50914; color: #FFFFFF">1.35%</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="period">2026H1</td>
 <td class="gt_row gt_left" headers="title">Bridgerton: Season 4</td>
-<td class="gt_row gt_right" headers="hours_viewed">889,800,000</td>
-<td class="gt_row gt_right" headers="viewing_share">1.20%</td>
+<td class="gt_row gt_right" headers="hours_viewed">889.8M</td>
+<td class="gt_row gt_right" headers="viewing_share" style="background-color: #FB745C; color: #FFFFFF">1.20%</td>
 </tr>
 </tbody><tfoot>
 <tr class="gt_sourcenotes odd">
@@ -2914,37 +2955,38 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Netflix Catalog Size Across Reporting Periods"</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">period =</span> <span class="st">"Reporting Period"</span>,</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">number_of_titles =</span> <span class="st">"Number of Titles"</span>,</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_runtime_hours =</span> <span class="st">"Total Runtime (Hours)"</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(number_of_titles, total_runtime_hours),</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span></span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Netflix Catalog Size Across Reporting Periods"</span>,</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"The drop after 2023H1 reflects the 2023 Data Schism"</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">period =</span> <span class="st">"Reporting Period"</span>,</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">number_of_titles =</span> <span class="st">"Number of Titles"</span>,</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_runtime_hours =</span> <span class="st">"Total Runtime (Hours)"</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(number_of_titles, total_runtime_hours),</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="wvpyadfjhv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wvpyadfjhv table {
+<div id="ektfmfvtrb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ektfmfvtrb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wvpyadfjhv thead, #wvpyadfjhv tbody, #wvpyadfjhv tfoot, #wvpyadfjhv tr, #wvpyadfjhv td, #wvpyadfjhv th {
+#ektfmfvtrb thead, #ektfmfvtrb tbody, #ektfmfvtrb tfoot, #ektfmfvtrb tr, #ektfmfvtrb td, #ektfmfvtrb th {
   border-style: none;
 }
 
-#wvpyadfjhv p {
+#ektfmfvtrb p {
   margin: 0;
   padding: 0;
 }
 
-#wvpyadfjhv .gt_table {
+#ektfmfvtrb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2970,12 +3012,12 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-left-color: #D3D3D3;
 }
 
-#wvpyadfjhv .gt_caption {
+#ektfmfvtrb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wvpyadfjhv .gt_title {
+#ektfmfvtrb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2987,7 +3029,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-width: 0;
 }
 
-#wvpyadfjhv .gt_subtitle {
+#ektfmfvtrb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2999,7 +3041,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-top-width: 0;
 }
 
-#wvpyadfjhv .gt_heading {
+#ektfmfvtrb .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -3011,13 +3053,13 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#wvpyadfjhv .gt_bottom_border {
+#ektfmfvtrb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wvpyadfjhv .gt_col_headings {
+#ektfmfvtrb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3032,7 +3074,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#wvpyadfjhv .gt_col_heading {
+#ektfmfvtrb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3052,7 +3094,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   overflow-x: hidden;
 }
 
-#wvpyadfjhv .gt_column_spanner_outer {
+#ektfmfvtrb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3064,15 +3106,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 4px;
 }
 
-#wvpyadfjhv .gt_column_spanner_outer:first-child {
+#ektfmfvtrb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wvpyadfjhv .gt_column_spanner_outer:last-child {
+#ektfmfvtrb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wvpyadfjhv .gt_column_spanner {
+#ektfmfvtrb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3084,11 +3126,11 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   width: 100%;
 }
 
-#wvpyadfjhv .gt_spanner_row {
+#ektfmfvtrb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wvpyadfjhv .gt_group_heading {
+#ektfmfvtrb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3114,7 +3156,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   text-align: left;
 }
 
-#wvpyadfjhv .gt_empty_group_heading {
+#ektfmfvtrb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3129,15 +3171,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   vertical-align: middle;
 }
 
-#wvpyadfjhv .gt_from_md > :first-child {
+#ektfmfvtrb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wvpyadfjhv .gt_from_md > :last-child {
+#ektfmfvtrb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wvpyadfjhv .gt_row {
+#ektfmfvtrb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3156,7 +3198,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   overflow-x: hidden;
 }
 
-#wvpyadfjhv .gt_stub {
+#ektfmfvtrb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3169,7 +3211,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#wvpyadfjhv .gt_stub_row_group {
+#ektfmfvtrb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3183,15 +3225,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   vertical-align: top;
 }
 
-#wvpyadfjhv .gt_row_group_first td {
+#ektfmfvtrb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wvpyadfjhv .gt_row_group_first th {
+#ektfmfvtrb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wvpyadfjhv .gt_summary_row {
+#ektfmfvtrb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3201,16 +3243,16 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#wvpyadfjhv .gt_first_summary_row {
+#ektfmfvtrb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wvpyadfjhv .gt_first_summary_row.thick {
+#ektfmfvtrb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wvpyadfjhv .gt_last_summary_row {
+#ektfmfvtrb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3220,7 +3262,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#wvpyadfjhv .gt_grand_summary_row {
+#ektfmfvtrb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3230,7 +3272,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#wvpyadfjhv .gt_first_grand_summary_row {
+#ektfmfvtrb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3240,7 +3282,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-top-color: #D3D3D3;
 }
 
-#wvpyadfjhv .gt_last_grand_summary_row_top {
+#ektfmfvtrb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3250,11 +3292,11 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#wvpyadfjhv .gt_striped {
+#ektfmfvtrb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wvpyadfjhv .gt_table_body {
+#ektfmfvtrb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3263,7 +3305,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#wvpyadfjhv .gt_footnotes {
+#ektfmfvtrb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3277,7 +3319,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#wvpyadfjhv .gt_footnote {
+#ektfmfvtrb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3286,7 +3328,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#wvpyadfjhv .gt_sourcenotes {
+#ektfmfvtrb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3300,7 +3342,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#wvpyadfjhv .gt_sourcenote {
+#ektfmfvtrb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3308,72 +3350,72 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#wvpyadfjhv .gt_left {
+#ektfmfvtrb .gt_left {
   text-align: left;
 }
 
-#wvpyadfjhv .gt_center {
+#ektfmfvtrb .gt_center {
   text-align: center;
 }
 
-#wvpyadfjhv .gt_right {
+#ektfmfvtrb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wvpyadfjhv .gt_font_normal {
+#ektfmfvtrb .gt_font_normal {
   font-weight: normal;
 }
 
-#wvpyadfjhv .gt_font_bold {
+#ektfmfvtrb .gt_font_bold {
   font-weight: bold;
 }
 
-#wvpyadfjhv .gt_font_italic {
+#ektfmfvtrb .gt_font_italic {
   font-style: italic;
 }
 
-#wvpyadfjhv .gt_super {
+#ektfmfvtrb .gt_super {
   font-size: 65%;
 }
 
-#wvpyadfjhv .gt_footnote_marks {
+#ektfmfvtrb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wvpyadfjhv .gt_asterisk {
+#ektfmfvtrb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wvpyadfjhv .gt_indent_1 {
+#ektfmfvtrb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wvpyadfjhv .gt_indent_2 {
+#ektfmfvtrb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wvpyadfjhv .gt_indent_3 {
+#ektfmfvtrb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wvpyadfjhv .gt_indent_4 {
+#ektfmfvtrb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wvpyadfjhv .gt_indent_5 {
+#ektfmfvtrb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wvpyadfjhv .katex-display {
+#ektfmfvtrb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wvpyadfjhv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ektfmfvtrb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3381,9 +3423,12 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Netflix Catalog Size Across Reporting Periods</td>
+<td colspan="3" class="gt_heading gt_title gt_font_normal">Netflix Catalog Size Across Reporting Periods</td>
 </tr>
-<tr class="gt_col_headings even">
+<tr class="gt_heading even">
+<td colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">The drop after 2023H1 reflects the 2023 Data Schism</td>
+</tr>
+<tr class="gt_col_headings header">
 <th id="period" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Reporting Period</th>
 <th id="number_of_titles" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Number of Titles</th>
 <th id="total_runtime_hours" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total Runtime (Hours)</th>
@@ -3487,23 +3532,23 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 <span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a><span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="ifuuitudek" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ifuuitudek table {
+<div id="koxcuimxeo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#koxcuimxeo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ifuuitudek thead, #ifuuitudek tbody, #ifuuitudek tfoot, #ifuuitudek tr, #ifuuitudek td, #ifuuitudek th {
+#koxcuimxeo thead, #koxcuimxeo tbody, #koxcuimxeo tfoot, #koxcuimxeo tr, #koxcuimxeo td, #koxcuimxeo th {
   border-style: none;
 }
 
-#ifuuitudek p {
+#koxcuimxeo p {
   margin: 0;
   padding: 0;
 }
 
-#ifuuitudek .gt_table {
+#koxcuimxeo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3529,12 +3574,12 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-left-color: #D3D3D3;
 }
 
-#ifuuitudek .gt_caption {
+#koxcuimxeo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ifuuitudek .gt_title {
+#koxcuimxeo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3546,7 +3591,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-width: 0;
 }
 
-#ifuuitudek .gt_subtitle {
+#koxcuimxeo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3558,7 +3603,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-top-width: 0;
 }
 
-#ifuuitudek .gt_heading {
+#koxcuimxeo .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -3570,13 +3615,13 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#ifuuitudek .gt_bottom_border {
+#koxcuimxeo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ifuuitudek .gt_col_headings {
+#koxcuimxeo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3591,7 +3636,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#ifuuitudek .gt_col_heading {
+#koxcuimxeo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3611,7 +3656,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   overflow-x: hidden;
 }
 
-#ifuuitudek .gt_column_spanner_outer {
+#koxcuimxeo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3623,15 +3668,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 4px;
 }
 
-#ifuuitudek .gt_column_spanner_outer:first-child {
+#koxcuimxeo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ifuuitudek .gt_column_spanner_outer:last-child {
+#koxcuimxeo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ifuuitudek .gt_column_spanner {
+#koxcuimxeo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3643,11 +3688,11 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   width: 100%;
 }
 
-#ifuuitudek .gt_spanner_row {
+#koxcuimxeo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ifuuitudek .gt_group_heading {
+#koxcuimxeo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3673,7 +3718,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   text-align: left;
 }
 
-#ifuuitudek .gt_empty_group_heading {
+#koxcuimxeo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3688,15 +3733,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   vertical-align: middle;
 }
 
-#ifuuitudek .gt_from_md > :first-child {
+#koxcuimxeo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ifuuitudek .gt_from_md > :last-child {
+#koxcuimxeo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ifuuitudek .gt_row {
+#koxcuimxeo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3715,7 +3760,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   overflow-x: hidden;
 }
 
-#ifuuitudek .gt_stub {
+#koxcuimxeo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3728,7 +3773,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#ifuuitudek .gt_stub_row_group {
+#koxcuimxeo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3742,15 +3787,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   vertical-align: top;
 }
 
-#ifuuitudek .gt_row_group_first td {
+#koxcuimxeo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ifuuitudek .gt_row_group_first th {
+#koxcuimxeo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ifuuitudek .gt_summary_row {
+#koxcuimxeo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3760,16 +3805,16 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#ifuuitudek .gt_first_summary_row {
+#koxcuimxeo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ifuuitudek .gt_first_summary_row.thick {
+#koxcuimxeo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ifuuitudek .gt_last_summary_row {
+#koxcuimxeo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3779,7 +3824,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#ifuuitudek .gt_grand_summary_row {
+#koxcuimxeo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3789,7 +3834,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#ifuuitudek .gt_first_grand_summary_row {
+#koxcuimxeo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3799,7 +3844,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-top-color: #D3D3D3;
 }
 
-#ifuuitudek .gt_last_grand_summary_row_top {
+#koxcuimxeo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3809,11 +3854,11 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#ifuuitudek .gt_striped {
+#koxcuimxeo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ifuuitudek .gt_table_body {
+#koxcuimxeo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3822,7 +3867,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#ifuuitudek .gt_footnotes {
+#koxcuimxeo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3836,7 +3881,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#ifuuitudek .gt_footnote {
+#koxcuimxeo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3845,7 +3890,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#ifuuitudek .gt_sourcenotes {
+#koxcuimxeo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3859,7 +3904,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#ifuuitudek .gt_sourcenote {
+#koxcuimxeo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3867,72 +3912,72 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#ifuuitudek .gt_left {
+#koxcuimxeo .gt_left {
   text-align: left;
 }
 
-#ifuuitudek .gt_center {
+#koxcuimxeo .gt_center {
   text-align: center;
 }
 
-#ifuuitudek .gt_right {
+#koxcuimxeo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ifuuitudek .gt_font_normal {
+#koxcuimxeo .gt_font_normal {
   font-weight: normal;
 }
 
-#ifuuitudek .gt_font_bold {
+#koxcuimxeo .gt_font_bold {
   font-weight: bold;
 }
 
-#ifuuitudek .gt_font_italic {
+#koxcuimxeo .gt_font_italic {
   font-style: italic;
 }
 
-#ifuuitudek .gt_super {
+#koxcuimxeo .gt_super {
   font-size: 65%;
 }
 
-#ifuuitudek .gt_footnote_marks {
+#koxcuimxeo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ifuuitudek .gt_asterisk {
+#koxcuimxeo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ifuuitudek .gt_indent_1 {
+#koxcuimxeo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ifuuitudek .gt_indent_2 {
+#koxcuimxeo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ifuuitudek .gt_indent_3 {
+#koxcuimxeo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ifuuitudek .gt_indent_4 {
+#koxcuimxeo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ifuuitudek .gt_indent_5 {
+#koxcuimxeo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ifuuitudek .katex-display {
+#koxcuimxeo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ifuuitudek div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#koxcuimxeo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4082,23 +4127,23 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 <span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a><span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="lkxivwedni" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lkxivwedni table {
+<div id="jbyrdssyub" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jbyrdssyub table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lkxivwedni thead, #lkxivwedni tbody, #lkxivwedni tfoot, #lkxivwedni tr, #lkxivwedni td, #lkxivwedni th {
+#jbyrdssyub thead, #jbyrdssyub tbody, #jbyrdssyub tfoot, #jbyrdssyub tr, #jbyrdssyub td, #jbyrdssyub th {
   border-style: none;
 }
 
-#lkxivwedni p {
+#jbyrdssyub p {
   margin: 0;
   padding: 0;
 }
 
-#lkxivwedni .gt_table {
+#jbyrdssyub .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4124,12 +4169,12 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-left-color: #D3D3D3;
 }
 
-#lkxivwedni .gt_caption {
+#jbyrdssyub .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lkxivwedni .gt_title {
+#jbyrdssyub .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4141,7 +4186,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-width: 0;
 }
 
-#lkxivwedni .gt_subtitle {
+#jbyrdssyub .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4153,7 +4198,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-top-width: 0;
 }
 
-#lkxivwedni .gt_heading {
+#jbyrdssyub .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -4165,13 +4210,13 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#lkxivwedni .gt_bottom_border {
+#jbyrdssyub .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lkxivwedni .gt_col_headings {
+#jbyrdssyub .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4186,7 +4231,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#lkxivwedni .gt_col_heading {
+#jbyrdssyub .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4206,7 +4251,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   overflow-x: hidden;
 }
 
-#lkxivwedni .gt_column_spanner_outer {
+#jbyrdssyub .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4218,15 +4263,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 4px;
 }
 
-#lkxivwedni .gt_column_spanner_outer:first-child {
+#jbyrdssyub .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lkxivwedni .gt_column_spanner_outer:last-child {
+#jbyrdssyub .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lkxivwedni .gt_column_spanner {
+#jbyrdssyub .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4238,11 +4283,11 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   width: 100%;
 }
 
-#lkxivwedni .gt_spanner_row {
+#jbyrdssyub .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lkxivwedni .gt_group_heading {
+#jbyrdssyub .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4268,7 +4313,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   text-align: left;
 }
 
-#lkxivwedni .gt_empty_group_heading {
+#jbyrdssyub .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4283,15 +4328,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   vertical-align: middle;
 }
 
-#lkxivwedni .gt_from_md > :first-child {
+#jbyrdssyub .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lkxivwedni .gt_from_md > :last-child {
+#jbyrdssyub .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lkxivwedni .gt_row {
+#jbyrdssyub .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4310,7 +4355,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   overflow-x: hidden;
 }
 
-#lkxivwedni .gt_stub {
+#jbyrdssyub .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4323,7 +4368,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#lkxivwedni .gt_stub_row_group {
+#jbyrdssyub .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4337,15 +4382,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   vertical-align: top;
 }
 
-#lkxivwedni .gt_row_group_first td {
+#jbyrdssyub .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lkxivwedni .gt_row_group_first th {
+#jbyrdssyub .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lkxivwedni .gt_summary_row {
+#jbyrdssyub .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4355,16 +4400,16 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#lkxivwedni .gt_first_summary_row {
+#jbyrdssyub .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lkxivwedni .gt_first_summary_row.thick {
+#jbyrdssyub .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lkxivwedni .gt_last_summary_row {
+#jbyrdssyub .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4374,7 +4419,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#lkxivwedni .gt_grand_summary_row {
+#jbyrdssyub .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4384,7 +4429,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#lkxivwedni .gt_first_grand_summary_row {
+#jbyrdssyub .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4394,7 +4439,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-top-color: #D3D3D3;
 }
 
-#lkxivwedni .gt_last_grand_summary_row_top {
+#jbyrdssyub .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4404,11 +4449,11 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#lkxivwedni .gt_striped {
+#jbyrdssyub .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lkxivwedni .gt_table_body {
+#jbyrdssyub .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4417,7 +4462,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#lkxivwedni .gt_footnotes {
+#jbyrdssyub .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4431,7 +4476,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#lkxivwedni .gt_footnote {
+#jbyrdssyub .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4440,7 +4485,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#lkxivwedni .gt_sourcenotes {
+#jbyrdssyub .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4454,7 +4499,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#lkxivwedni .gt_sourcenote {
+#jbyrdssyub .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4462,72 +4507,72 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#lkxivwedni .gt_left {
+#jbyrdssyub .gt_left {
   text-align: left;
 }
 
-#lkxivwedni .gt_center {
+#jbyrdssyub .gt_center {
   text-align: center;
 }
 
-#lkxivwedni .gt_right {
+#jbyrdssyub .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lkxivwedni .gt_font_normal {
+#jbyrdssyub .gt_font_normal {
   font-weight: normal;
 }
 
-#lkxivwedni .gt_font_bold {
+#jbyrdssyub .gt_font_bold {
   font-weight: bold;
 }
 
-#lkxivwedni .gt_font_italic {
+#jbyrdssyub .gt_font_italic {
   font-style: italic;
 }
 
-#lkxivwedni .gt_super {
+#jbyrdssyub .gt_super {
   font-size: 65%;
 }
 
-#lkxivwedni .gt_footnote_marks {
+#jbyrdssyub .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lkxivwedni .gt_asterisk {
+#jbyrdssyub .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lkxivwedni .gt_indent_1 {
+#jbyrdssyub .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lkxivwedni .gt_indent_2 {
+#jbyrdssyub .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lkxivwedni .gt_indent_3 {
+#jbyrdssyub .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lkxivwedni .gt_indent_4 {
+#jbyrdssyub .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lkxivwedni .gt_indent_5 {
+#jbyrdssyub .gt_indent_5 {
   text-indent: 25px;
 }
 
-#lkxivwedni .katex-display {
+#jbyrdssyub .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#lkxivwedni div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jbyrdssyub div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4672,35 +4717,31 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 <span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">biggest_title =</span> <span class="st">"Most Viewed Title"</span>,</span>
 <span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">biggest_views_m =</span> <span class="st">"Top Views (M)"</span></span>
 <span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(</span>
-<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a>      records,</span>
-<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a>      average_views_m,</span>
-<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a>      top10_avg_views_m,</span>
-<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a>      biggest_views_m</span>
-<span id="cb17-63"><a href="#cb17-63" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb17-64"><a href="#cb17-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span></span>
-<span id="cb17-65"><a href="#cb17-65" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb17-66"><a href="#cb17-66" aria-hidden="true" tabindex="-1"></a><span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fmt_integer</span>(<span class="at">columns =</span> records) <span class="sc">|&gt;</span></span>
+<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(average_views_m, top10_avg_views_m, biggest_views_m),</span>
+<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span></span>
+<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="himrlcrlkt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#himrlcrlkt table {
+<div id="jjotrtazaf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jjotrtazaf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#himrlcrlkt thead, #himrlcrlkt tbody, #himrlcrlkt tfoot, #himrlcrlkt tr, #himrlcrlkt td, #himrlcrlkt th {
+#jjotrtazaf thead, #jjotrtazaf tbody, #jjotrtazaf tfoot, #jjotrtazaf tr, #jjotrtazaf td, #jjotrtazaf th {
   border-style: none;
 }
 
-#himrlcrlkt p {
+#jjotrtazaf p {
   margin: 0;
   padding: 0;
 }
 
-#himrlcrlkt .gt_table {
+#jjotrtazaf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4726,12 +4767,12 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-left-color: #D3D3D3;
 }
 
-#himrlcrlkt .gt_caption {
+#jjotrtazaf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#himrlcrlkt .gt_title {
+#jjotrtazaf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4743,7 +4784,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-width: 0;
 }
 
-#himrlcrlkt .gt_subtitle {
+#jjotrtazaf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4755,7 +4796,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-top-width: 0;
 }
 
-#himrlcrlkt .gt_heading {
+#jjotrtazaf .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -4767,13 +4808,13 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#himrlcrlkt .gt_bottom_border {
+#jjotrtazaf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#himrlcrlkt .gt_col_headings {
+#jjotrtazaf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4788,7 +4829,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#himrlcrlkt .gt_col_heading {
+#jjotrtazaf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4808,7 +4849,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   overflow-x: hidden;
 }
 
-#himrlcrlkt .gt_column_spanner_outer {
+#jjotrtazaf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4820,15 +4861,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 4px;
 }
 
-#himrlcrlkt .gt_column_spanner_outer:first-child {
+#jjotrtazaf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#himrlcrlkt .gt_column_spanner_outer:last-child {
+#jjotrtazaf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#himrlcrlkt .gt_column_spanner {
+#jjotrtazaf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4840,11 +4881,11 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   width: 100%;
 }
 
-#himrlcrlkt .gt_spanner_row {
+#jjotrtazaf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#himrlcrlkt .gt_group_heading {
+#jjotrtazaf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4870,7 +4911,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   text-align: left;
 }
 
-#himrlcrlkt .gt_empty_group_heading {
+#jjotrtazaf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4885,15 +4926,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   vertical-align: middle;
 }
 
-#himrlcrlkt .gt_from_md > :first-child {
+#jjotrtazaf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#himrlcrlkt .gt_from_md > :last-child {
+#jjotrtazaf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#himrlcrlkt .gt_row {
+#jjotrtazaf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4912,7 +4953,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   overflow-x: hidden;
 }
 
-#himrlcrlkt .gt_stub {
+#jjotrtazaf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4925,7 +4966,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#himrlcrlkt .gt_stub_row_group {
+#jjotrtazaf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4939,15 +4980,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   vertical-align: top;
 }
 
-#himrlcrlkt .gt_row_group_first td {
+#jjotrtazaf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#himrlcrlkt .gt_row_group_first th {
+#jjotrtazaf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#himrlcrlkt .gt_summary_row {
+#jjotrtazaf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4957,16 +4998,16 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#himrlcrlkt .gt_first_summary_row {
+#jjotrtazaf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#himrlcrlkt .gt_first_summary_row.thick {
+#jjotrtazaf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#himrlcrlkt .gt_last_summary_row {
+#jjotrtazaf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4976,7 +5017,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#himrlcrlkt .gt_grand_summary_row {
+#jjotrtazaf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4986,7 +5027,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#himrlcrlkt .gt_first_grand_summary_row {
+#jjotrtazaf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4996,7 +5037,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-top-color: #D3D3D3;
 }
 
-#himrlcrlkt .gt_last_grand_summary_row_top {
+#jjotrtazaf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5006,11 +5047,11 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#himrlcrlkt .gt_striped {
+#jjotrtazaf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#himrlcrlkt .gt_table_body {
+#jjotrtazaf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5019,7 +5060,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#himrlcrlkt .gt_footnotes {
+#jjotrtazaf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5033,7 +5074,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#himrlcrlkt .gt_footnote {
+#jjotrtazaf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5042,7 +5083,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#himrlcrlkt .gt_sourcenotes {
+#jjotrtazaf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5056,7 +5097,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#himrlcrlkt .gt_sourcenote {
+#jjotrtazaf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5064,72 +5105,72 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#himrlcrlkt .gt_left {
+#jjotrtazaf .gt_left {
   text-align: left;
 }
 
-#himrlcrlkt .gt_center {
+#jjotrtazaf .gt_center {
   text-align: center;
 }
 
-#himrlcrlkt .gt_right {
+#jjotrtazaf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#himrlcrlkt .gt_font_normal {
+#jjotrtazaf .gt_font_normal {
   font-weight: normal;
 }
 
-#himrlcrlkt .gt_font_bold {
+#jjotrtazaf .gt_font_bold {
   font-weight: bold;
 }
 
-#himrlcrlkt .gt_font_italic {
+#jjotrtazaf .gt_font_italic {
   font-style: italic;
 }
 
-#himrlcrlkt .gt_super {
+#jjotrtazaf .gt_super {
   font-size: 65%;
 }
 
-#himrlcrlkt .gt_footnote_marks {
+#jjotrtazaf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#himrlcrlkt .gt_asterisk {
+#jjotrtazaf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#himrlcrlkt .gt_indent_1 {
+#jjotrtazaf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#himrlcrlkt .gt_indent_2 {
+#jjotrtazaf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#himrlcrlkt .gt_indent_3 {
+#jjotrtazaf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#himrlcrlkt .gt_indent_4 {
+#jjotrtazaf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#himrlcrlkt .gt_indent_5 {
+#jjotrtazaf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#himrlcrlkt .katex-display {
+#jjotrtazaf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#himrlcrlkt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jjotrtazaf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5154,7 +5195,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="content_type">Live Event</td>
-<td class="gt_row gt_right" headers="records">310.0</td>
+<td class="gt_row gt_right" headers="records">310</td>
 <td class="gt_row gt_right" headers="average_views_m">1.5</td>
 <td class="gt_row gt_right" headers="top10_avg_views_m">11.3</td>
 <td class="gt_row gt_left" headers="biggest_title">Jake Paul vs. Mike Tyson</td>
@@ -5162,7 +5203,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="content_type">Pre-recorded</td>
-<td class="gt_row gt_right" headers="records">29,992.0</td>
+<td class="gt_row gt_right" headers="records">29,992</td>
 <td class="gt_row gt_right" headers="average_views_m">1.3</td>
 <td class="gt_row gt_right" headers="top10_avg_views_m">101.7</td>
 <td class="gt_row gt_left" headers="biggest_title">Adolescence: Limited Series</td>
@@ -5246,23 +5287,23 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 <span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a><span class="fu">style_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="yuwnojdhcu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yuwnojdhcu table {
+<div id="tssfhguivq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tssfhguivq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yuwnojdhcu thead, #yuwnojdhcu tbody, #yuwnojdhcu tfoot, #yuwnojdhcu tr, #yuwnojdhcu td, #yuwnojdhcu th {
+#tssfhguivq thead, #tssfhguivq tbody, #tssfhguivq tfoot, #tssfhguivq tr, #tssfhguivq td, #tssfhguivq th {
   border-style: none;
 }
 
-#yuwnojdhcu p {
+#tssfhguivq p {
   margin: 0;
   padding: 0;
 }
 
-#yuwnojdhcu .gt_table {
+#tssfhguivq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5288,12 +5329,12 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-left-color: #D3D3D3;
 }
 
-#yuwnojdhcu .gt_caption {
+#tssfhguivq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yuwnojdhcu .gt_title {
+#tssfhguivq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5305,7 +5346,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-width: 0;
 }
 
-#yuwnojdhcu .gt_subtitle {
+#tssfhguivq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5317,7 +5358,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-top-width: 0;
 }
 
-#yuwnojdhcu .gt_heading {
+#tssfhguivq .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -5329,13 +5370,13 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#yuwnojdhcu .gt_bottom_border {
+#tssfhguivq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yuwnojdhcu .gt_col_headings {
+#tssfhguivq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5350,7 +5391,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#yuwnojdhcu .gt_col_heading {
+#tssfhguivq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5370,7 +5411,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   overflow-x: hidden;
 }
 
-#yuwnojdhcu .gt_column_spanner_outer {
+#tssfhguivq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5382,15 +5423,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 4px;
 }
 
-#yuwnojdhcu .gt_column_spanner_outer:first-child {
+#tssfhguivq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yuwnojdhcu .gt_column_spanner_outer:last-child {
+#tssfhguivq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yuwnojdhcu .gt_column_spanner {
+#tssfhguivq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5402,11 +5443,11 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   width: 100%;
 }
 
-#yuwnojdhcu .gt_spanner_row {
+#tssfhguivq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yuwnojdhcu .gt_group_heading {
+#tssfhguivq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5432,7 +5473,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   text-align: left;
 }
 
-#yuwnojdhcu .gt_empty_group_heading {
+#tssfhguivq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5447,15 +5488,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   vertical-align: middle;
 }
 
-#yuwnojdhcu .gt_from_md > :first-child {
+#tssfhguivq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yuwnojdhcu .gt_from_md > :last-child {
+#tssfhguivq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yuwnojdhcu .gt_row {
+#tssfhguivq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5474,7 +5515,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   overflow-x: hidden;
 }
 
-#yuwnojdhcu .gt_stub {
+#tssfhguivq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5487,7 +5528,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#yuwnojdhcu .gt_stub_row_group {
+#tssfhguivq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5501,15 +5542,15 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   vertical-align: top;
 }
 
-#yuwnojdhcu .gt_row_group_first td {
+#tssfhguivq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yuwnojdhcu .gt_row_group_first th {
+#tssfhguivq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yuwnojdhcu .gt_summary_row {
+#tssfhguivq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5519,16 +5560,16 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#yuwnojdhcu .gt_first_summary_row {
+#tssfhguivq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yuwnojdhcu .gt_first_summary_row.thick {
+#tssfhguivq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yuwnojdhcu .gt_last_summary_row {
+#tssfhguivq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5538,7 +5579,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#yuwnojdhcu .gt_grand_summary_row {
+#tssfhguivq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5548,7 +5589,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#yuwnojdhcu .gt_first_grand_summary_row {
+#tssfhguivq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5558,7 +5599,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-top-color: #D3D3D3;
 }
 
-#yuwnojdhcu .gt_last_grand_summary_row_top {
+#tssfhguivq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5568,11 +5609,11 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#yuwnojdhcu .gt_striped {
+#tssfhguivq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yuwnojdhcu .gt_table_body {
+#tssfhguivq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5581,7 +5622,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-bottom-color: #D3D3D3;
 }
 
-#yuwnojdhcu .gt_footnotes {
+#tssfhguivq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5595,7 +5636,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#yuwnojdhcu .gt_footnote {
+#tssfhguivq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5604,7 +5645,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#yuwnojdhcu .gt_sourcenotes {
+#tssfhguivq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5618,7 +5659,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   border-right-color: #D3D3D3;
 }
 
-#yuwnojdhcu .gt_sourcenote {
+#tssfhguivq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5626,72 +5667,72 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
   padding-right: 5px;
 }
 
-#yuwnojdhcu .gt_left {
+#tssfhguivq .gt_left {
   text-align: left;
 }
 
-#yuwnojdhcu .gt_center {
+#tssfhguivq .gt_center {
   text-align: center;
 }
 
-#yuwnojdhcu .gt_right {
+#tssfhguivq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yuwnojdhcu .gt_font_normal {
+#tssfhguivq .gt_font_normal {
   font-weight: normal;
 }
 
-#yuwnojdhcu .gt_font_bold {
+#tssfhguivq .gt_font_bold {
   font-weight: bold;
 }
 
-#yuwnojdhcu .gt_font_italic {
+#tssfhguivq .gt_font_italic {
   font-style: italic;
 }
 
-#yuwnojdhcu .gt_super {
+#tssfhguivq .gt_super {
   font-size: 65%;
 }
 
-#yuwnojdhcu .gt_footnote_marks {
+#tssfhguivq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yuwnojdhcu .gt_asterisk {
+#tssfhguivq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yuwnojdhcu .gt_indent_1 {
+#tssfhguivq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yuwnojdhcu .gt_indent_2 {
+#tssfhguivq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yuwnojdhcu .gt_indent_3 {
+#tssfhguivq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yuwnojdhcu .gt_indent_4 {
+#tssfhguivq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yuwnojdhcu .gt_indent_5 {
+#tssfhguivq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yuwnojdhcu .katex-display {
+#tssfhguivq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yuwnojdhcu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#tssfhguivq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5932,7 +5973,7 @@ Figure&nbsp;1: The 2023 Data Schism. Starting in 2023H2, Netflix splits each rep
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>AI disclosure, I used ChatGPT to help format the css for this project to get Netflix themed fonts and colors. I also used Claude for the Gini coefficient math but i drew the conclusion from it myself. After my first run through, I asked Claude to compare my work to the rubric and so I had it make the variables for me after i realized i shouldn’t hard code the numbers in my comparative analysis’s, so i can copy and paste them into the memo I’d write myself.</p>
+<p>AI disclosure, I used ChatGPT to help format the css for this project to get Netflix themed fonts and colors. I also used Claude for the Gini coefficient math but i drew the conclusion from it myself. After my first run through, I asked Claude to compare my work to the rubric and so I had it make the variables for me after i realized i shouldn’t hard code the numbers in my comparative analysis’s, so i can plug the variable into the memo I’d write myself.</p>
 </div>
 </div>
 </div>
