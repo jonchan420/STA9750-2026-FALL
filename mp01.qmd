@@ -883,7 +883,7 @@ Even so, I don't expect these gaps to change the overall conclusions, because th
 ---
 
 ::: {.callout-note title="AI Usage Statement" collapse="true"}
-AI disclosure, I used ChatGPT to help format the css for this project to get Netflix themed fonts and colors. I also used Claude for the Gini coefficient math but i drew the conclusion from it myself. After my first run through, I asked Claude to compare my work to the rubric and so I had it make the variables for me after i realized i shouldn't hard code the numbers in my comparative analysis's, so i can plug the variable into the memo I'd write myself. 
+AI disclosure, I used ChatGPT to help format the css for this project to get Netflix themed fonts and colors. I also used Claude for the Gini coefficient math but i drew the conclusion from it myself. After my first run through, I asked Claude to compare my work to the rubric and so I had it make the variables for me after i realized i shouldn't hard code the numbers in my comparative analyses, so i can plug the variable into the memo I'd write myself. 
 :::
 
 This work ©2026 by jonchan420 was initially prepared as a Mini-Project for
