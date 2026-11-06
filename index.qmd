@@ -62,6 +62,12 @@ Work in progress obv but I want to put my conferences, club exp, work exp, proje
 ## STA 9750
 
 This site will contain my mini-projects and course project for STA 9750.
+
+[Mini-Project 01](mp01.html){.btn .btn-primary role="button"}
+[Mini-Project 02](mp02.html){.btn .btn-primary role="button"}
+[Mini-Project 03](mp03.html){.btn .btn-primary role="button"}
+[Mini-Project 04](mp04.html){.btn .btn-primary role="button"}
+
 ```{r}
 #| include: false
 
